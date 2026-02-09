@@ -10,6 +10,8 @@ export interface Profile {
   phone: string;
   photo?: string;
   skills: string[];
+  instagram?: string;
+  linkedin?: string;
 }
 
 export interface Theme {
@@ -21,4 +23,14 @@ export interface Theme {
   card: string;
   muted: string;
   border: string;
+}
+
+export interface Project {
+  id: string;
+  titulo: string;
+  descripcion: string;
+  imagen?: string;
+  archivoPdf: string;
+  tags: string[];
+  año: number;
 }

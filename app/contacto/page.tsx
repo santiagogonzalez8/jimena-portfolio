@@ -9,7 +9,7 @@ export default function ContactoPage() {
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
-    mensaje: '',
+    mensaje: ''
   });
   const [enviado, setEnviado] = useState(false);
   const [enviando, setEnviando] = useState(false);
@@ -39,21 +39,22 @@ export default function ContactoPage() {
     <main className="min-h-screen py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="mb-12 text-center">
-          <Link
-            href="/"
-            className="text-primary hover:underline mb-4 inline-block"
-          >
+          <Link href="/" className="text-primary hover:underline mb-4 inline-block">
             ← Volver al inicio
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contacto</h1>
-          <p className="text-lg text-muted">Hablemos de tu próximo proyecto</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Contacto
+          </h1>
+          <p className="text-lg text-muted">
+            Hablemos de tu próximo proyecto
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Información de contacto */}
           <div>
             <h2 className="text-2xl font-bold mb-6">Información</h2>
-
+            
             <div className="space-y-6">
               <div>
                 <p className="font-semibold mb-2">📍 Ubicación</p>
@@ -73,24 +74,31 @@ export default function ContactoPage() {
               <div>
                 <p className="font-semibold mb-2">📱 Teléfono</p>
                 <a
-                  href="tel:+59895532294"
+                  href="tel:+59894960342"
                   className="text-primary hover:underline"
                 >
-                  095532294
+                  094960342
                 </a>
               </div>
 
               <div>
                 <p className="font-semibold mb-2">🌐 Redes Sociales</p>
-                <div className="flex gap-4 mt-2">
-                  <a href="#" className="text-primary hover:underline">
-                    Instagram
+                <div className="flex flex-col gap-2 mt-2">
+                  <a
+                    href="https://www.instagram.com/jimeagueroo_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    📸 Instagram
                   </a>
-                  <a href="#" className="text-primary hover:underline">
-                    Behance
-                  </a>
-                  <a href="#" className="text-primary hover:underline">
-                    LinkedIn
+                  <a
+                    href="https://www.linkedin.com/in/jimenaagüero/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    💼 LinkedIn
                   </a>
                 </div>
               </div>
@@ -100,7 +108,7 @@ export default function ContactoPage() {
           {/* Formulario */}
           <div>
             <h2 className="text-2xl font-bold mb-6">Enviar mensaje</h2>
-
+            
             {enviado ? (
               <div className="bg-primary/10 border border-primary rounded-lg p-6 text-center">
                 <p className="text-primary font-semibold mb-2">
@@ -120,48 +128,52 @@ export default function ContactoPage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block font-medium mb-2">Nombre *</label>
+                  <label className="block font-medium mb-2">
+                    Nombre *
+                  </label>
                   <input
                     type="text"
                     required
                     value={formData.nombre}
-                    onChange={(e) =>
-                      setFormData({ ...formData, nombre: e.target.value })
-                    }
-                    className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                    className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                     placeholder="Tu nombre"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-medium mb-2">Email *</label>
+                  <label className="block font-medium mb-2">
+                    Email *
+                  </label>
                   <input
                     type="email"
                     required
                     value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                     placeholder="tu@email.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-medium mb-2">Mensaje *</label>
+                  <label className="block font-medium mb-2">
+                    Mensaje *
+                  </label>
                   <textarea
                     required
                     value={formData.mensaje}
-                    onChange={(e) =>
-                      setFormData({ ...formData, mensaje: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
                     rows={5}
-                    className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                    className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none bg-background"
                     placeholder="Cuéntame sobre tu proyecto..."
                   />
                 </div>
 
-                <Button type="submit" disabled={enviando} className="w-full">
+                <Button
+                  type="submit"
+                  disabled={enviando}
+                  className="w-full"
+                >
                   {enviando ? 'Enviando...' : 'Enviar mensaje'}
                 </Button>
               </form>

@@ -35,7 +35,9 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             {profile.name}
           </h1>
-          <p className="text-2xl md:text-3xl text-muted mb-8">{profile.role}</p>
+          <p className="text-2xl md:text-3xl text-muted mb-8">
+            {profile.role}
+          </p>
           <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto">
             {profile.bioShort}
           </p>
@@ -56,7 +58,9 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
             Sobre mí
           </h2>
-          <p className="text-lg mb-6 text-center">{profile.bioLong}</p>
+          <p className="text-lg mb-6 text-center">
+            {profile.bioLong}
+          </p>
           <div className="flex flex-wrap gap-4 justify-center mb-8">
             {profile.skills.map((skill) => (
               <span
@@ -70,7 +74,19 @@ export default function Home() {
           <div className="text-center space-y-2">
             <p className="text-muted">📍 {profile.location}</p>
             <p className="text-muted">✉️ {profile.email}</p>
-            <p className="text-muted">📱 {profile.phone}</p>
+            <p className="text-muted">
+              📱 <a href="tel:+59894960342" className="hover:text-primary transition-colors">{profile.phone}</a>
+            </p>
+            {profile.instagram && (
+              <p className="text-muted">
+                📸 <a href={profile.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
+              </p>
+            )}
+            {profile.linkedin && (
+              <p className="text-muted">
+                💼 <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
+              </p>
+            )}
           </div>
         </div>
       </section>
