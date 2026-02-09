@@ -164,4 +164,4 @@ export default function ProyectosPage() {
       </div>
     </main>
   );
-}
+} 
